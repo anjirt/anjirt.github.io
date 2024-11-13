@@ -1,0 +1,13 @@
+http://example.com/haha/
+http://example.com/wtf/
+http://example.com/no/
+http://example.com/hello-world/
+http://example.com/
+http://example.com/tags/gak/
+http://example.com/tags/hak-cipta/
+http://example.com/tags/ham/
+http://example.com/tags/just/
+http://example.com/tags/kidding/
+http://example.com/categories/Bang/
+http://example.com/categories/Bang/babi-hutan/
+http://example.com/categories/anjir/
