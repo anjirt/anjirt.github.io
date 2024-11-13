@@ -3,36 +3,32 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - main  # Ganti dengan nama branch utama jika berbeda
-  pull_request:
-    branches:
-      - main
+      - main  # Ganti dengan nama branch utama kamu jika berbeda
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '16'  # Gunakan versi Node.js yang sesuai dengan Hexo
+        node-version: '20'  # Pilih versi Node.js yang sesuai dengan kebutuhan Hexo
 
     - name: Install dependencies
       run: |
+        npm install -g hexo-cli
         npm install
 
-    - name: Build Hexo
-      run: |
-        npx hexo generate  # Atau gunakan `hexo g`
+    - name: Generate static files
+      run: hexo generate  # Akan menghasilkan konten di folder `public/`
 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.3.7
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: gh-pages  # Branch dari repo-2 (mybloghexo.github.io) tempat file statis akan di-push
-        folder: public  # Folder tempat Hexo menghasilkan file statis
-        repository-name: anjirt.github.io  # Ganti dengan nama repo GitHub Pages kamu
-        token: ${{ secrets.GITHUB_TOKEN }}  # Token untuk akses ke repo GitHub Pages
+        branch: gh-pages  # Branch tempat GitHub Pages akan dideploy
+        folder: public    # Folder yang berisi file statik hasil build Hexo
+        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token untuk otentikasi
