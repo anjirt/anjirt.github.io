@@ -31,5 +31,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public  # Folder hasil generate Hexo
-          destination_repo: mybloghexo/mybloghexo.github.io  # Ganti dengan nama repo 2 Anda
+          destination_repo: anjirt/anjirt.github.io  # Ganti dengan nama repo 2 Anda
           branch: main  # Biasanya branch GitHub Pages adalah 'main'
