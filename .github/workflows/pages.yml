@@ -31,4 +31,4 @@ jobs:
       with:
         branch: gh-pages  # Branch tempat GitHub Pages akan dideploy
         folder: public    # Folder yang berisi file statik hasil build Hexo
-        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token untuk otentikasi
+        token: ${{ secrets.GH_TOKEN }}  # GitHub token untuk otentikasi
