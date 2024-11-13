@@ -3,7 +3,7 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - main  # Ganti dengan nama branch utama kamu jika berbeda
+      - master  # Ganti dengan nama branch utama kamu jika berbeda
 
 jobs:
   build:
